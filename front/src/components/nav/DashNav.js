@@ -16,7 +16,7 @@ const DashNav = ()=> {
     <div id='dashnav'>
       <a href='#' onClick={logout}><span class="material-icons">logout</span></a>
       <a href='#'><span class="material-icons">settings</span></a>
-      <a href='#'><span class="material-icons">apps</span></a>
+      <a href='/newArticle'><span class="material-icons">library_add</span></a>
     </div>
 
 

@@ -11,6 +11,8 @@ import Navbar from './components/nav/Navbar'
 import Login from './components/user/Login'
 import Signup from './components/user/Signup0'
 import AdminDash from './components/nav/AdminDash'
+import NewArticle from './components/article/NewArticle'
+import ViewArticle from './components/article/ViewArticle'
 import AuthDataProvider from "./components/auth-provider";
 import {useAuthDataContext} from "./components/auth-provider";
 
@@ -19,10 +21,12 @@ const App = () => {
       return (
         <Router>
             <Route path="/" component={Navbar}/>
+            <Route exact path="/blog/*" component={ViewArticle}/>
             <Route path="/signup" component={Signup}/>
             <AuthDataProvider>
-              <SentryRoute path="/login" access='user' success={AdminDash} fail={Login}/>
+              <SentryRoute path="/login" access='user' success={Login} fail={Login}/>
               <SentryRoute path="/dash" access='user' success={AdminDash} fail={Login}/>
+              <SentryRoute path="/newArticle" access='user' success={NewArticle} fail={Login}/>
             </AuthDataProvider>
         </Router>
 

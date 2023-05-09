@@ -1,0 +1,58 @@
+
+//price caluation Table
+table.price_display{
+  font-size: 1em;
+}
+//generic table
+table {
+  display:block;
+  height:80%;
+	width:80%;
+  tr:first-child{
+    position: sticky;
+    background-color: lightblue;
+    color:white;
+
+  }
+}
+.cell_highlight{
+  background:lightgrey;
+  display:flex;
+  width:100%;
+  color:white;
+  text-align: center;
+  padding:0;
+}
+tr{
+	display:flex;
+	width:100%;
+	padding:2% 0;
+  border: 1px solid lighten(lightblue,13%);
+  &:hover{
+    cursor:pointer;
+    background:lighten(lightblue,13%);
+  }
+}
+td, th {
+	flex: 1 1 20%;
+	text-align:center;
+}
+
+//profile chip
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}

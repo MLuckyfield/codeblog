@@ -46,12 +46,9 @@ app.use(session({
 app.use(express.json());
 
 app.disable('x-powered-by');
-//backend  routes
-//const exercisesRouter = require('./routes/exercises');
-//const usersRouter = require('./routes/users');
-//app.use('/exercises',exercisesRouter);
-//app.use('/users',usersRouter);
+
 app.use('/user',require('./models/user/api'));
+app.use('/article',require('./models/article/api'));
 //heroku deployment
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "/front/build", "index.html"));

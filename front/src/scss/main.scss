@@ -2,6 +2,7 @@
 @import 'unique';
 @import 'fonts';
 @import 'forms';
+@import 'table';
 @import 'variables';
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
@@ -21,8 +22,7 @@ h1, h2, h3{
   height: $max-height;
   width: $max-width;
   //background-color: white;
-
-  display: inline-flex;
+  display: flex;
 }
 
 .row{

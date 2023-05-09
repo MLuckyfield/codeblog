@@ -12,3 +12,13 @@ export const logoutUser = (user) =>{
 export const getCurrentUser = ()=>{
   return JSON.parse(localStorage.getItem('user'));
 }
+//Articlerelated helpers
+export const setArticle = (article)=>{
+  localStorage.setItem('article', JSON.stringify(article));
+}
+export const getArticle = (article)=>{
+  return JSON.parse(localStorage.getItem('article'));
+}
+export const clearArticle = (article)=>{
+  localStorage.removeItem('article');
+}
