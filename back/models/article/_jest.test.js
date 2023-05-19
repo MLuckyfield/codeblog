@@ -7,7 +7,7 @@ beforeEach(async()=>{
 });
 
 afterEach(async()=>{
-  await mongoose.connect(process.env.MONGO_URI)
+  await mongoose.connection.close()
 });
 
 describe('getArticles',()=>{
