@@ -1,0 +1,32 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Jest unit tests
+        run: npm run test
+
+#       - name: Build Docker image
+#         uses: docker/build-push-action@v2
+#         with:
+#           context: .
+#           push: false
+#           tags: my-image:${{ github.sha }}
+
+#       - name: Deploy to DigitalOcean App Platform
+#         uses: digitalocean/action-doctl@v2
+#         with:
+#           token: ${{ secrets.DO_API_TOKEN }}
+#           command: |
+#             doctl apps create --spec .do/app.yaml
+#             doctl apps create-deployment my-app --image my-image:${{ github.sha }}
