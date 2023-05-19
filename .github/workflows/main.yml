@@ -16,12 +16,12 @@ jobs:
       - name: Run Backend Unit Tests (Jest)
         run: npm --prefix back run test
 
-#       - name: Build Docker image
-#         uses: docker/build-push-action@v4
-#         with:
-#           context: .
-#           push: false
-#           tags: my-image:${{ github.sha }}
+      - name: Build Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: false
+          tags: my-image
 
 #       - name: Deploy to DigitalOcean App Platform
 #         uses: digitalocean/action-doctl@v2
