@@ -1,6 +1,5 @@
 FROM node:14
-COPY package.json /back
-RUN npm install
-COPY package.json /front
-RUN npm install
+WORKDIR /app
+RUN cd /app/back && npm install
+RUN cd /app/front && npm install
 CMD ["npm","start"]
