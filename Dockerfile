@@ -1,6 +1,7 @@
 FROM node:14
 WORKDIR /app
-COPY /front/package.json /front/package-lock.json ./front
+RUN mkdir front && cd front
+COPY /front/package.json /front/package-lock.json .
 
 WORKDIR /app/front
 RUN npm ci
