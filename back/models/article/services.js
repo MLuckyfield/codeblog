@@ -22,8 +22,8 @@ const getArticles = async (query)=>{
   console.log('get articles',query)
   try{
     const result = await Article.find(
-        query.filter?JSON.parse(query.filter):{},
-        query.fields?query.fields:{}
+        query.hasOwnProperty('filter')?query.filter:{},
+        query.hasOwnProperty('fields')?query.fields:{}
       )
     return {success:true,payload:result}
   }
