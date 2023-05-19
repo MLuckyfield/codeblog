@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const Article = mongoose.model('Article', new Schema({
-  name: {
+  en_name: {
     type: String,
     required: true,
   },
@@ -12,6 +12,9 @@ const Article = mongoose.model('Article', new Schema({
   identifier: {
     type: String,
     required: true,
+  },
+  jp_name: {
+    type: String,
   },
   tags: [{
     value:{type: String},

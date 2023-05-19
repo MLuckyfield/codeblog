@@ -1,12 +1,13 @@
 
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import { Redirect } from 'react-router'
 
 //import styles
 import './scss/main.scss'
 
 //import components
+import Homepage from './pages/Homepage'
 import Navbar from './components/nav/Navbar'
 import Login from './components/user/Login'
 import Signup from './components/user/Signup0'
@@ -20,14 +21,19 @@ import {useAuthDataContext} from "./components/auth-provider";
 const App = () => {
       return (
         <Router>
-            <Route path="/" component={Navbar}/>
-            <Route exact path="/blog/*" component={ViewArticle}/>
-            <Route path="/signup" component={Signup}/>
-            <AuthDataProvider>
-              <SentryRoute path="/login" access='user' success={Login} fail={Login}/>
-              <SentryRoute path="/dash" access='user' success={AdminDash} fail={Login}/>
-              <SentryRoute path="/newArticle" access='user' success={NewArticle} fail={Login}/>
-            </AuthDataProvider>
+        <div>
+              <Navbar/>
+              <Switch>
+              <Route path="/" component={Homepage}/>
+              <Route exact path="/blog/*" component={ViewArticle}/>
+              <Route path="/signup" component={Signup}/>
+              <AuthDataProvider>
+                <SentryRoute path="/login" access='user' success={Login} fail={Login}/>
+                <SentryRoute path="/dash" access='user' success={AdminDash} fail={Login}/>
+                <SentryRoute path="/newArticle" access='user' success={NewArticle} fail={Login}/>
+              </AuthDataProvider>
+              </Switch>
+            </div>
         </Router>
 
       )

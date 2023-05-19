@@ -1,7 +1,6 @@
 const User = require('../models/user/model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const passport = require('passport')
 
 const ADMIN = 'admin';
 const USER = 'user';
