@@ -1,6 +1,6 @@
 FROM node:14
-COPY . /back
-COPY . /front
-RUN cd back && npm install
-RUN cd front && npm install
+COPY package.json /back
+RUN npm install
+COPY package.json /front
+RUN npm install
 CMD ["npm","start"]
