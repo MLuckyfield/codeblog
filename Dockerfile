@@ -6,7 +6,7 @@ COPY /front/package.json /front/package-lock.json .
 WORKDIR /app/front
 RUN npm ci
 COPY /front* ./front
-RUN npm run build
+RUN npm --prefix front run build
 
 WORKDIR /app
 RUN mkdir back && cd back

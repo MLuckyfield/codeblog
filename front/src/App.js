@@ -24,14 +24,14 @@ const App = () => {
         <div>
               <Navbar/>
               <Switch>
-              <Route path="/" component={Homepage}/>
-              <Route exact path="/blog/*" component={ViewArticle}/>
-              <Route path="/signup" component={Signup}/>
-              <AuthDataProvider>
-                <SentryRoute path="/login" access='user' success={Login} fail={Login}/>
-                <SentryRoute path="/dash" access='user' success={AdminDash} fail={Login}/>
-                <SentryRoute path="/newArticle" access='user' success={NewArticle} fail={Login}/>
-              </AuthDataProvider>
+                <Route exact path="/" component={Homepage}/>
+                <Route exact path="/blog/*" component={ViewArticle}/>
+                <Route path="/signup" component={Signup}/>
+                <AuthDataProvider>
+                  <SentryRoute path="/login" access='user' success={Login} fail={Login}/>
+                  <SentryRoute path="/dash" access='user' success={AdminDash} fail={Login}/>
+                  <SentryRoute path="/newArticle" access='user' success={NewArticle} fail={Login}/>
+                </AuthDataProvider>
               </Switch>
             </div>
         </Router>

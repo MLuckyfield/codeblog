@@ -12,7 +12,6 @@ body{
   margin: 0;
   padding: 0;
   display:flex;
-
 }
 h1, h2, h3{
   color: $first;
@@ -36,6 +35,10 @@ h1, h2, h3{
   align-items: center;display: flex;
   flex-direction: row;
 }
+.up_row{
+  display:flex;
+  flex-direction: row;
+}
 .col{
   margin: $unit;
   padding: $unit;
@@ -45,13 +48,15 @@ h1, h2, h3{
   display: flex;
   align-items: center;
   flex-direction: column;
+  flex-direction: wrap;
 }
+@media (max-width:800px){
 
+}
 // components
 .hero{
-  height:80vh;
+  height:50vh;
   width:100vw;
-  border:1px solid green;
 }
 .overlay{
   width:100%;
@@ -65,7 +70,6 @@ h1, h2, h3{
   justify-content:center;
 }
 .sidebar{
-
   height: 100%;
   width: 12%;
 
